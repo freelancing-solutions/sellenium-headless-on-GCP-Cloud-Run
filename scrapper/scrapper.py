@@ -1,9 +1,9 @@
 import datetime
 from random import random
-from flask import jsonify
-
-from main import browser_instance
+from flask import jsonify, current_app
+from browser.browser import browser_instance
 from selenium.webdriver.support.ui import Select
+from config import Config
 
 
 class Scrapper:
@@ -16,14 +16,15 @@ class Scrapper:
     scrappe_stock_uri: str = "https://www.investagrams.com/StockJockey/"
     logged_in: bool = False
 
-    def __init__(self, app):
-        self.username: str = app.config.DEFAULT_USERNAME
-        self.password: str = app.config.DEFAULT_PASSWORD
-        self.investagram_uri: str = app.config.INVESTAGRAM_HOME_URI
+    def __init__(self):
+        with current_app.app_context():
+            self.username: str = Config.DEFAULT_USERNAME
+            self.password: str = Config.DEFAULT_PASSWORD
+            self.investagram_uri: str = Config.INVESTAGRAM_HOME_URI
         self.login()
 
     def wait(self):
-        browser_instance.implicitly_wait(time_to_wait=random(self.wait_time))
+        browser_instance.implicitly_wait(time_to_wait=self.wait_time)
 
     @staticmethod
     def return_now_date() -> str:
@@ -39,26 +40,27 @@ class Scrapper:
 
     def login(self, json_data: dict = None) -> tuple:
         if self.logged_in is True:
+            print("already logged in")
             return jsonify({'status': True, 'message': 'already logged in'}), 200
 
-        if "username" in json_data and json_data['username'] != "":
+        if json_data and ("username" in json_data) and (json_data['username'] != ""):
             username: str = json_data.get("username")
         else:
             username: str = self.username
 
-        if "password" in json_data and json_data['password'] != "":
+        if json_data and ("password" in json_data) and (json_data['password'] != ""):
             password: str = json_data.get('password')
         else:
             password: str = self.password
 
-        if 'site_url' in json_data and json_data['site_url'] != "":
+        if json_data and ('site_url' in json_data) and (json_data['site_url'] != ""):
             site_url: str = json_data.get('site_url')
         else:
             site_url: str = self.investagram_uri
 
-        browser_instance.get(url=site_url)
+        # going straight to login
+        browser_instance.get(url=site_url + 'login')
         self.wait()
-        browser_instance.find_element_by_class_name(name='btn-login').click()
         input_elements = browser_instance.find_elements_by_class_name(name=self.login_input_class)
         if len(input_elements) > 1:
             input_elements[0].send_keys(value=username)
@@ -189,6 +191,12 @@ class Scrapper:
                             'message': 'successfully fetched parsed data'}), 200
 
         return jsonify({'status': False, 'message': 'unable to locate data'}), 500
+
+    @staticmethod
+    def init_app():
+        with current_app.app_context():
+            scrapper_instance = Scrapper()
+            return scrapper_instance
 
 
 

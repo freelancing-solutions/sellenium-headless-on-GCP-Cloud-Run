@@ -14,7 +14,9 @@ class WebBrowser:
         self.chrome_options.add_argument("window-size=1024,768")
         self.chrome_options.add_argument("--no-sandbox")
 
-    def init_app(self, app):
+    def init_app(self):
         self.browser = webdriver.Chrome(chrome_options=self.chrome_options)
         return self.browser
 
+
+browser_instance = WebBrowser().init_app()
