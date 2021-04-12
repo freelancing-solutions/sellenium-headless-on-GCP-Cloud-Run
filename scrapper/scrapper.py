@@ -37,10 +37,7 @@ class Scrapper:
         # DEFAULT FORMAT = 2021/03/08
 
     def login(self, json_data: dict = None) -> tuple:
-        if self.logged_in is True:
-            return jsonify({'status': True, 'message': 'already logged in'}), 200
-
-        if "username" in json_data and json_data['username'] != "":
+                k "username" in json_data and json_data['username'] != "":
             username: str = json_data.get("username")
         else:
             username: str = self.username
