@@ -7,7 +7,7 @@ from config import Config
 
 
 class Scrapper:
-    wait_time: int = 10
+    wait_time: int = 1
     login_input_class: str = "form-control ng-pristine ng-empty ng-invalid ng-invalid-required " \
                              "ng-valid-maxlength ng-touched"
     login_button_class: str = "btn btn-lg btn-block investa-login--btn-login btn-investa__medium--blue " \
@@ -21,7 +21,6 @@ class Scrapper:
             self.username: str = Config.DEFAULT_USERNAME
             self.password: str = Config.DEFAULT_PASSWORD
             self.investagram_uri: str = Config.INVESTAGRAM_HOME_URI
-        self.login()
 
     def wait(self):
         browser_instance.implicitly_wait(time_to_wait=self.wait_time)
