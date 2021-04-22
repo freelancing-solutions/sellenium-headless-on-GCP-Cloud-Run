@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="Learn how to invest in the Philippine Stock Market using our stock screener, real time chart, virtual trading, tutorials, news and price alerts and more."
+          name="description"/>
+    <meta content="login,account,login account,signin,philippine,exchange,stock,PSE,Investagrams" name="keywords"/>
+    <meta content="40A1AE61E78A43E9110D0723A66FD2A8" name="msvalidate.01"/>
+    <meta content="lu_tUEmjBgrzWC7o0s7lKidyyF-PQkaFIAkO7742hE0" name="google-site-verification"/>
+    <title>
+        Login | Investagrams
+    </title>
+    <script type="text/javascript"> var globalAcceptLangHeader = "chrome_firefox_safari_etc"; </script>
+    <meta content="1599265263687910" property="fb:app_id"/>
+    <meta content="en_US" property="og:locale"/>
+    <meta content="Investagrams" property="og:site_name"/>
+    <meta content="https://www.investagrams.com/Images/PagePreview/InvestagramsPreviewImage.jpg?is_1.6"
+          property="og:image"/>
+    <meta content="Login | Investagrams" property="og:title"/>
+    <meta content="Learn how to invest in the Philippine Stock Market using our stock screener, real time chart, virtual trading, tutorials, news and price alerts and more."
+          property="og:description"/>
+    <meta content="https://www.investagrams.com/login" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="@investagrams" name="twitter:site"/>
+    <meta content="Login" name="twitter:title"/>
+    <meta content="Learn how to invest in the Philippine Stock Market using our stock screener, real time chart, virtual trading, tutorials, news and price alerts and more."
+          name="twitter:description"/>
+    <meta content="https://www.investagrams.com/Images/PagePreview/InvestagramsPreviewImage.jpg?is_1.6"
+          name="twitter:image"/>
+    <meta content="Investagrams" name="twitter:domain"/>
+    <link href="Images/app_icon.png?is_1.6" rel="shortcut icon" type="image/x-icon"/>
+    <link href="Images/PagePreview/InvestagramsPreviewImage.jpg?is_1.6" rel="image_src"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel='stylesheet' type='text/css'/>
+    <link href="Font/FontAwesome/4.7/font-awesome.css?is_1.6" rel='stylesheet' type='text/css'/>
+    <link href="CSS/Bootstrap4/bootstrap.min.css?is_1.6" rel="stylesheet"/>
+    <link href="CSS/Animation/animate.min.css?i_1.64.17.0" rel="stylesheet" type="text/css"/>
+    <link href="CSS/Common/MainSiteStyle.css?i_1.64.17.0" rel="stylesheet" type="text/css"/>
+    <link href="CSS/Common/sass/MainSiteStyle.min.css?i_1.64.17.0" rel="stylesheet" type="text/css"/>
+    <link href="CSS/Stock/StockStyle.css?i_1.64.17.0" rel="stylesheet" type="text/css"/>
+    <script src="Javascript/JQuery/jquery-2.1.1.js?is_1.6" type="text/javascript"></script>
+</head>
+<body data-ng-app="investagramsAngularApp" data-ng-controller="userNavSnippetController">
+<style> .splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+    z-index: 99999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.splash-screen div {
+    margin-top: -8%;
+    text-align: center;
+} </style>
+<div class="splash-screen" data-ng-hide="!isSplashScreenLoading">
+    <div><img alt="Investagrams" src="Images/app_icon.png?is_1.6" style="height: 130px; width: 130px; display: block;"/>
+        <img alt="Loading..." src="Images/Loading%20State/loading_state_2.gif?is_1.6" style="margin-top: 30px;"/></div>
+</div>
+<div class="nav-content">
+    <nav class="navbar navbar-welcome navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container" style="display: flex; justify-content: center;"><img alt="Loading..."
+                                                                                    class="navbar-brand headerLoaderStyle"
+                                                                                    id="InvestagramsHeaderLoader"
+                                                                                    src="Images/Loading%20State/loading_state_2.gif?is_1.6"
+                                                                                    style="display: none;"/>
+            <a class="navbar-brand logoStyle" href="./" id="InvestagramsHeaderLogo" style="margin-right: 0;"> <img
+                    alt="Investagrams" height="32" src="Images/Common/InvestagramsWord-logo.png?is_1.6"/> </a></div>
+    </nav>
+</div>
+<div style="flex-shrink: 0 !important; height: 49px;"></div>
+<div class="body-content parent-full-height" data-recording-sensitive="">
+    <div class="alert-notification-message" id="AlertNotificationMessage" style="display: none; z-index: 9999;">
+        <div class="alert alert-success alert-dismissible" id="AlertNotificationPanelMessage"
+             style="padding-right: 2rem;">
+            <button class="close" onclick="closeAlertNotificationMessageAfterTimeout()" style="outline: none;"
+                    type="button"><span aria-hidden="true">&times;</span> <span
+                    class="sr-only">Close</span></button>
+            <span id="AlertNotificationTextMessage">Hello There!</span></div>
+    </div>
+    <div class="investa-login investa-login--container full-height parent-full-height"
+         data-ng-controller="loginPageController">
+        <div class="row investa-login--row full-height">
+            <div class="col-md-6 investa-login--center">
+                <div class="investa-login__container container">
+                    <div class="investa-login__content-holder investa-login--left"><h4>Login</h4>
+                        <div><p>Don't have an account yet?<a class="green" href="/Register/">&nbsp; Sign up</a>.</p>
+                            <br/></div>
+                        <div class="invest-login__input-holder">
+                            <form>
+                                <div class="form-group"><label> <strong>Email Address</strong> </label> <input
+                                        class="form-control" data-ng-disabled="IsLoading" data-ng-model="LoginRequest.Username"
+                                        data-on-enter-keydown-directive="authenticateUser()"
+                                        maxlength="40" placeholder="Email Address"
+                                        required="required" type="text"/></div>
+                                <div class="form-group"><label> <strong>Password</strong> </label>
+                                    <div class="input-group">
+                                        <input class="form-control"
+                                                                    data-ng-disabled="IsLoading" data-ng-model="LoginRequest.Password"
+                                                                    data-on-enter-keydown-directive="authenticateUser()"
+                                                                    maxlength="40"
+                                                                    placeholder="Password"
+                                                                    required="required" type="{{(IsShowPassword) ? 'text' : 'password'}}"/>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-secondary input-group-text"
+                                                    data-ng-click="IsShowPassword = !IsShowPassword"
+                                                    data-ng-disabled="IsLoading" type="button"> {{(IsShowPassword) ?
+                                                "Hide" : "Show"}}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-checkbox"><input class="custom-control-input"
+                                                                                           data-ng-disabled="IsLoading"
+                                                                                           data-ng-model="LoginRequest.IsRememberMe"
+                                                                                           id="rememberMeChkbox"
+                                                                                           type="checkbox"/>
+                                            <label class="custom-control-label" for="rememberMeChkbox"
+                                                   style="padding-top: 3px;"> Keep me logged in</label></div>
+                                    </div>
+                                    <div class="col-6 align-self-center investa-login--forgot-link"><a class="green"
+                                                                                                       data-ng-click="forgotUserPassword()"
+                                                                                                       data-ng-disabled="IsLoading">Forgot
+                                        Password?</a></div>
+                                </div>
+                                <div class="form-group-row">
+                                    <div class="alert alert-dismissible" data-ng-class="{'alert-success' : DisplayMessage.IsSuccess, 'alert-danger' : !DisplayMessage.IsSuccess}"
+                                         data-ng-show="DisplayMessage.Message">
+                                        <button class="close" data-dismiss="alert" type="button"><span
+                                                aria-hidden="true">&times;</span> <span class="sr-only">Close</span>
+                                        </button>
+                                        <span>{{DisplayMessage.Message}}</span></div>
+                                </div>
+                                <button class="btn btn-lg btn-block investa-login--btn-login btn-investa__medium--blue btn-investa__medium"
+                                        data-ng-click="authenticateUser()"
+                                        data-ng-disabled="IsLoading" type="button"> Log in
+                                </button>
+                                <div class="row investa-login--top">
+                                    <div class="col">
+                                        <hr/>
+                                    </div>
+                                    <div class="col investa-login--center investa-login--below"> or choose below</div>
+                                    <div class="col">
+                                        <hr/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="investa-login--facebook">
+                                            <button data-ng-click="loginViaFacebook()" data-ng-disabled="IsLoading"
+                                                    type="button"><img
+                                                    src="/Images/Account/Login/icons/fb_icon.png?i_1.64.17.0"/>
+                                                <p>Login with Facebook</p></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 investa-login--display">
+                <div class="investa-login__images">
+                    <div class="row text-center pt-5">
+                        <div class="container onboarding__login-signup onboarding__login-signup--width"><h4>Be a better
+                            investor/trader.</h4>
+                            <p>Build and strengthen your portfolio with our educational materials and tools</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="Javascript/Bootstrap4/popper.min.js?is_1.6"></script>
+<script src="Javascript/Bootstrap4/bootstrap.min.js?is_1.6"></script>
+<script src="Javascript/Common/ConstantScript.js?i_1.64.17.0" type="text/javascript"></script>
+<script src="Javascript/Common/HubsJavaScript.js?i_1.64.17.0" type="text/javascript"></script>
+<script src="Javascript/Common/MainSiteJavascript.js?i_1.64.17.0" type="text/javascript"></script>
+<script src="/Javascript/Common/RefTrackerScript.js?i_1.64.17.0" type="text/javascript"></script>
+<script src="Javascript/Common/UtmTrackerScript.js?i_1.64.17.0" type="text/javascript"></script>
+<script src="Javascript/Angular/angular.min.js?is_1.6" type="text/javascript"></script>
+<script src="Javascript/Angular/AngularSanitize/angular-sanitize.min.js?is_1.6" type="text/javascript"></script>
+<script src="Javascript/Angular/AngularSwitch/angular-ui-switch.min.js?is_1.6" type="text/javascript"></script>
+<script src="Javascript/Angular/AngularAutoGrow/angular-autogrow.min.js?is_1.6" type="text/javascript"></script>
+<script src="Javascript/Angular/AngularTimeAgo/angular-timeago-core.min.js?is_1.6" type="text/javascript"></script>
+<script src="Javascript/Angular/AngularTimeAgo/time-ago-language-en_US.js?is_1.6" type="text/javascript"></script>
+<script src="Javascript/Angular/AngularUIBootstrap/ui-bootstrap-tpls-3.0.6.min.js?is_1.6"
+        type="text/javascript"></script>
+<script src="Javascript/Angular/AngularLightbox/lightbox.min.js?is_1.6" type="text/javascript"></script>
+<script src="Javascript/Angular/angular-animate.min.js?i_1.64.17.0"></script>
+<script src="Javascript/AngularApp/app.js?i_1.64.17.0" type="text/javascript"></script>
+<script src="/Javascript/AngularApp/Directive/directives.js?i_1.64.17.0" type="text/javascript"></script>
+<script src="/Javascript/AngularApp/Services/Api/userApiService.js?i_1.64.17.0" type="text/javascript"></script>
+<script src="/Javascript/AngularApp/Services/Api/walletApiService.js?i_1.64.17.0" type="text/javascript"></script>
+<script src="/Javascript/AngularApp/Services/Api/userAccessApiService.js?i_1.64.17.0" type="text/javascript"></script>
+<script src="/Javascript/AngularApp/Services/Api/userPlatformTourApiService.js?i_1.64.17.0"
+        type="text/javascript"></script>
+<script src="/Javascript/AngularApp/Services/Api/chatApiService.js?i_1.64.17.0" type="text/javascript"></script>
+<script src="/Javascript/AngularApp/Controller/Snippet/User/userNavSnippetController.js?i_1.64.17.0"
+        type="text/javascript"></script>
+<script> window.fbAsyncInit = function () {
+    FB.init({appId: '1599265263687910', autoLogAppEvents: true, xfbml: true, version: 'v7.0'});
+};
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {
+        return;
+    }
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk')); </script>
+<script src="Javascript/AngularApp/Controller/Page/User/loginPageController.js?i_1.64.17.0"
+        type="text/javascript"></script>
+<script type="text/javascript"> var gaAuthenticatedUserId = -1;
+var gaIsUserLoggedOn = gaAuthenticatedUserId > 0; </script>
+<script type="text/javascript"> (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-53449681-1', 'auto');
+ga('require', 'displayfeatures');
+var gaClientId = "";
+ga('set', 'dimension1', gaAuthenticatedUserId);
+if (gaAuthenticatedUserId > 0) {
+    ga('set', 'userId', gaAuthenticatedUserId);
+}
+ga('send', 'pageview');
+var gaSendHeartBeatCount = 0;
+var gaAvoidSendingMultipleHeartBeat = false;
+
+function gaHeartBeatFunc() {
+    var timeoutDurationMs = 120000;
+    if (gaSendHeartBeatCount == 0) {
+        timeoutDurationMs = 120000;
+    } else if (gaSendHeartBeatCount == 1) {
+        timeoutDurationMs = 300000;
+    } else if (gaSendHeartBeatCount == 2) {
+        timeoutDurationMs = 1200000;
+    } else {
+        timeoutDurationMs = 1680000;
+    }
+    var doRepeatHeartBeat = true;
+    if (gaSendHeartBeatCount >= 6) {
+        doRepeatHeartBeat = false;
+    } else if (gaAvoidSendingMultipleHeartBeat && gaSendHeartBeatCount >= 1) {
+        doRepeatHeartBeat = false;
+    }
+    if (doRepeatHeartBeat) {
+        setTimeout(function () {
+            ga('send', 'event', 'HeartBeat', 'Check', gaSendHeartBeatCount + '-' + timeoutDurationMs);
+            gaSendHeartBeatCount++;
+            gaHeartBeatFunc();
+        }, timeoutDurationMs);
+    }
+}
+
+gaHeartBeatFunc();
+/** * Function that tracks a click on an outbound link in Analytics. * This function takes a valid URL string as an argument, and uses that URL string * as the event label. Setting the transport method to 'beacon' lets the hit be sent * using 'navigator.sendBeacon' in browser that support it. */ var trackOutboundLink = function (url) {
+    ga('send', 'event', 'outbound', 'click', url, {
+        'transport': 'beacon', 'hitCallback': function () {
+            document.location = url;
+        }
+    });
+};
+ga(function (tracker) {
+    gaClientId = tracker.get('clientId');
+}); </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPZT2JLDD9"></script>
+<script> window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+gtag('config', 'G-MPZT2JLDD9');
+if (gaAuthenticatedUserId > 0) {
+    gtag('config', 'GA_MEASUREMENT_ID', {'user_id': gaAuthenticatedUserId});
+} </script>
+<script type="text/javascript"> (function (c, l, a, r, i, t, y) {
+    c[a] = c[a] || function () {
+        (c[a].q = c[a].q || []).push(arguments)
+    };
+    t = l.createElement(r);
+    t.async = 1;
+    t.src = "https://www.clarity.ms/tag/" + i;
+    y = l.getElementsByTagName(r)[0];
+    y.parentNode.insertBefore(t, y);
+})(window, document, "clarity", "script", "4flsrkedwr"); </script>
+<script data-cf-beacon='{"token": "995318dae37e46b1af028b18b70a0e07"}' defer
+        src='https://static.cloudflareinsights.com/beacon.min.js'></script>
+<script type='text/javascript'> var userAccess = LocalStorageCache.AuthenticatedUserAccess.Get();
+var smartlookAnalyticsTrackingId = '5c76797ecab46d505a066c7da7c456a628559ce9';
+if (userAccess != null && !userAccess.IsFreeUser) {
+    if (smartlookAnalyticsTrackingId) {
+        window.smartlook || (function (d) {
+            var o = smartlook = function () {
+                o.api.push(arguments)
+            }, h = d.getElementsByTagName('head')[0];
+            var c = d.createElement('script');
+            o.api = [];
+            c.async = true;
+            c.type = 'text/javascript';
+            c.charset = 'utf-8';
+            c.src = 'https://rec.smartlook.com/recorder.js';
+            h.appendChild(c);
+        })(document);
+        smartlook('init', smartlookAnalyticsTrackingId);
+        if (gaIsUserLoggedOn) {
+            smartlook('identify', gaAuthenticatedUserId);
+        }
+    }
+} </script>
+<script> !function (f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = '2.0';
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s)
+}(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '937812329633290');
+fbq('track', 'PageView'); </script>
+<noscript><img height="1" src="https://www.facebook.com/tr?id=1029470243854852&ev=PageView&noscript=1" style="display:none"
+               width="1"/></noscript>
+<script type="application/ld+json"> {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Investagrams",
+    "url": "https://www.investagrams.com/",
+    "email": "support@investagrams.com",
+    "logo": "https://www.investagrams.com/Images/app_icon.png?is_1.6",
+    "sameAs": [
+        "http://www.facebook.com/investagrams",
+        "http://www.twitter.com/InvestaPH",
+        "https://www.linkedin.com/company/investagrams",
+        "https://www.youtube.com/channel/UCmaz9xVsN_kOmQUNvuWKRiw"
+    ]
+} </script>
+</body>
+</html>
